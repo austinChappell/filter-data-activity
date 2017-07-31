@@ -1,14 +1,21 @@
-const peeps = [
-  {name: 'Luke Skywalker', type: 'starwars'},
-  {name: 'Darth Vader', type: 'starwars'},
-  {name: 'Princess Leia', type: 'starwars'},
-  {name: 'Java the Hut', type: 'starwars'},
-  {name: 'Yoda', type: 'starwars'},
-  {name: 'Han Solo', type: 'starwars'},
-  {name: 'Spock', type: 'startrek'},
-  {name: 'Captain Kirk', type: 'startrek'},
-  {name: 'Uhura', type: 'startrek'},
-  {name: 'Scotty', type: 'startrek'},
+const characters = [
+  {name: 'Luke Skywalker', type: 'sw'},
+  {name: 'Darth Vader', type: 'sw'},
+  {name: 'Princess Leia', type: 'sw'},
+  {name: 'Java the Hut', type: 'sw'},
+  {name: 'Yoda', type: 'sw'},
+  {name: 'Han Solo', type: 'sw'},
+  {name: 'Spock', type: 'st'},
+  {name: 'Captain Kirk', type: 'st'},
+  {name: 'Uhura', type: 'st'},
+  {name: 'Scotty', type: 'st'},
 ];
 
-module.exports = peeps;
+function filterData(data, series) {
+  let result = data.characters.filter(function(person) {
+    return person.type == series;
+  });
+  return result;
+};
+
+module.exports = { characters, filterData };
