@@ -6,9 +6,9 @@
   </head>
   <body>
     <ul>
-      {{ #data.characters }}
-      <li>{{ name }}</li>
-      {{ /data.characters }}
+      {{ #seriesCodes }}
+      <li><a href="/{{ url }}">{{ fullTitle }}</a></li>
+      {{ /seriesCodes }}
     </ul>
   </body>
 </html>

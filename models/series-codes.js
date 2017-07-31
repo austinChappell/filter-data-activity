@@ -1,12 +1,12 @@
-const seriesCodes = {
-  starwars: {
+const seriesCodes = [
+  { url: 'starwars',
     fullTitle: 'Star Wars',
     code: 'sw'
   },
-  startrek: {
+  { url: 'startrek',
     fullTitle: 'Star Trek',
     code: 'st'
   }
-}
+];
 
 module.exports = seriesCodes;

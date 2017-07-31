@@ -9,13 +9,20 @@ router.use((req, res, next) => {
 });
 
 router.get('/all', (req, res) => {
-  // let indexData = {data, seriesCodes}
-  res.render('all-characters', data);
+  let indexData = {data, seriesCodes}
+  console.log(data);
+  res.render('all-characters', indexData);
 });
 
 router.get('/:series', (req, res) => {
-  let series = req.params.series;
-  let newArray = data.filterData(data, seriesCodes[series].code);
+  let seriesIndex;
+  for (let i = 0; i < seriesCodes.length; i++) {
+    if (seriesCodes[i].url === req.params.series) {
+      seriesIndex = i;
+      console.log(seriesIndex);
+    }
+  }
+  let newArray = data.filterData(data, seriesCodes[seriesIndex].code);
   seriesData = { characters: newArray };
   res.render('series-characters', seriesData);
 });
